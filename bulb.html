@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .age{
+            position: absolute;
+            justify-content: center;
+        }
+        .bulb{
+            height: 100vh ;
+            display:flex;
+            flex-direction:column ;
+            align-items:center ;
+            justify-content:center ;
+        }
+        #lightbulb{
+            height: 400px ;
+            width:  400px ;
+            background-color:black ;
+            border-radius: 50% ;
+        }
+        .switch{
+            padding: 10px 20px ;
+            background-color: none;
+            border: 2px solid black;
+
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="bulb" >
+    <div id="lightbulb"></div>
+    <button class="switch" onclick="bulbswitch()">switch</button>
+
+</div>
+
+    <div class="age" >
+    <h1 id="check" >check your eligibility</h1>
+    <button onclick="checkAge()" >Check your age</button>
+    <div>
+
+
+  
+    </div>
+    </div>
+    <script>
+
+        let status=false
+        const bulbswitch=()=>{
+            const lightBulb=document.getElementById("lightbulb")
+            console.log("Bulb has been clicked")
+            console.log(lightBulb)
+            if (status===true){
+                lightBulb.style.backgroundColour='red'
+                status =false
+            }
+            else{
+                lightBulb.style.backgroundColour='yellow'
+                status =true
+            }
+        }
+        const checkAge=()=>{
+            let age=window.prompt("please enter your age:")
+            let check=document.getElementById("check")
+            if (age>=18){
+                check.innerHTML="you are eligible for voting"}
+                else{
+                    check.innerHTML="sorry!! You are not eligible for voting"
+                }
+            }
+    </script>
+</body>
+</html>
